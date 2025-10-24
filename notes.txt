@@ -1,0 +1,2 @@
+Befehl (powerShell) um alle gemergten lokalen Branches zu löschen:
+git branch --merged | Where-Object { $_ -notmatch '(\*|main|master)' } | ForEach-Object { $_.Trim() } | ForEach-Object { git branch -d $_ }
